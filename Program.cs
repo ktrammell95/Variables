@@ -4,27 +4,18 @@ namespace Variables
 {
     class Program
     {
-        static void Main(string[] args)
+
+        static void NameMethod()
         {
-            var numberOfCupsOfCoffee = 3;
-            var fullName = "Katherine Trammell";
-
-            var rightNow = DateTime.Now;
-            var currentMonth = rightNow.Month;
-            var currentDay = rightNow.Day;
-            var currentYear = rightNow.Year;
-
-            Console.WriteLine($"{numberOfCupsOfCoffee} {fullName} {currentMonth}/{currentDay}/{currentYear}");
-            Console.WriteLine("\n");
-
-            Console.WriteLine("What is your name?");
+            Console.Write("What is your name? ");
             var userName = Console.ReadLine();
             Console.WriteLine($"It is nice meeting you, {userName}");
-            Console.WriteLine("\n");
-
-            Console.WriteLine("Please enter a number");
+        }
+        static void NumbersMethod()
+        {
+            Console.Write("Please enter a number: ");
             var firstNumberAsString = Console.ReadLine();
-            Console.WriteLine("Please enter another number");
+            Console.Write("Please enter another number: ");
             var secondNumberAsString = Console.ReadLine();
 
             Console.WriteLine($"Numbers given: {firstNumberAsString} and {secondNumberAsString}");
@@ -32,6 +23,7 @@ namespace Variables
             var firstOperand = double.Parse(firstNumberAsString);
             var secondOperand = double.Parse(secondNumberAsString);
             Console.WriteLine($"Numbers converted are: {firstOperand} and {secondOperand}");
+
             Console.WriteLine("\n");
 
             var sum = firstOperand + secondOperand;
@@ -52,12 +44,42 @@ namespace Variables
             Console.WriteLine($"If you multiply {firstOperand} and {secondOperand} you get {product}");
             Console.WriteLine($"If you divide {firstOperand} by {secondOperand} you get {quotient}");
             Console.WriteLine($"If you divide {firstOperand} by {secondOperand} the remainder is {remainder}");
-
-
-
-
-
-
         }
+
+        static void GreetingMethod()
+        {
+            Console.Write("What is your first name? ");
+            var firstName = Console.ReadLine();
+            if (firstName == "Alice")
+            {
+                Console.WriteLine("Alice! It is so great to meet you!");
+            }
+            else
+            {
+                Console.WriteLine($"It is nice meeting you, {firstName}");
+            }
+        }
+        static void Main(string[] args)
+        {
+            var numberOfCupsOfCoffee = 3;
+            var fullName = "Katherine Trammell";
+
+            var rightNow = DateTime.Now;
+            var currentMonth = rightNow.Month;
+            var currentDay = rightNow.Day;
+            var currentYear = rightNow.Year;
+
+            Console.WriteLine($"{numberOfCupsOfCoffee} {fullName} {currentMonth}/{currentDay}/{currentYear}");
+            Console.WriteLine("\n");
+
+            NameMethod();
+            Console.WriteLine("\n");
+
+            NumbersMethod();
+            Console.WriteLine("\n");
+
+            GreetingMethod();
+        }
+
     }
 }
